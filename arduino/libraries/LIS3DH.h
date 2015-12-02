@@ -36,6 +36,8 @@ public:
 //  void detach_dataReadyLow_interrupt();
   byte _readRegister (int addr);
   int  _writeRegister(int addr, byte value);
+  int _readAcceleration(int low_addr);
+  void configurePowerMode(int power_mode);
 private:
   //Attributes
   int _slaveSelectLowPin;
@@ -73,6 +75,12 @@ enum reg {
     REFERENCE = 0x26,
     STATUS_REG2 = 0x27,
     OUT_X_L = 0x28,
+    OUT_X_H = 0X29,
+    OUT_Y_L = 0x2A,
+    OUT_Y_H = 0X2B,
+    OUT_Z_L = 0x2C,
+    OUT_Z_H = 0X2D,
+
     
 };
 
